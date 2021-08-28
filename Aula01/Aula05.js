@@ -37,3 +37,72 @@ oi2()
 
 let oi3 = NPC.oi.bind(NPC)
 oi3()
+
+//------------------------------------------------------------
+
+function Tempo ()
+{
+    this.contador = 0
+
+    setInterval ( function () 
+    {
+        this.contador++
+        console.log(this.contador)
+
+    }.bind (this), 1000
+    )
+}
+
+new Tempo
+
+function Tempo ()
+{
+    this.contador = 0
+
+    setInterval ( function () 
+    {
+        this.contador++
+        console.log(this.contador)
+        
+    }.bind (this), 200
+    )
+}
+
+Tempo ()
+
+//Jeito de uma cambiarra
+function Tempo ()
+{
+    this.contador = 0
+
+    const selfie = this
+
+    setInterval ( function () 
+    {
+        selfie.contador++
+        console.log(selfie.contador)
+        
+    }, 200
+    )
+}
+
+new Tempo ()
+
+//------------------------------------------------------------------
+
+//Arrow
+
+let soma = function (a)
+    {
+        return 2 + a
+    }
+    
+    console.log (soma(a))
+
+//funcao Arrow
+
+somaArrow = (a) => {
+    return 2 + a
+}
+    
+console.log (somaArrow(2))
